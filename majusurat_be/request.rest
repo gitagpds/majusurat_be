@@ -1,0 +1,49 @@
+### GET ALL USERS
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjo2LCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluMTIzQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjUtMDUtMjhUMDI6NDI6MDIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDUtMjlUMTU6NDE6MzYuMDAwWiIsImlhdCI6MTc0ODUzMzMyMCwiZXhwIjoxNzQ4NTMzMzUwfQ.Vs8PZvCYGK0eMatXONS8-j1xVb3tTO8aW1emfjatpgw
+### GET USER BY ID
+GET http://localhost:5000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJuYW1lIjoiZ2l0YSIsImVtYWlsIjoiZ2l0YUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImNyZWF0ZWRBdCI6IjIwMjUtMDUtMjJUMDU6MjA6MzYuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDUtMjJUMDU6MzA6NTUuMDAwWiIsImlhdCI6MTc0Nzg5MTkzOSwiZXhwIjoxNzQ3ODkxOTY5fQ.2IHdTulzCHzB6X27SnDFOLAJSgkOBKEvPVQPgNZWmgc
+
+### POST USER
+POST http://localhost:5000/users 
+// Authorization: Bearer [Access Token nyaa]
+Content-Type: application/json
+
+{
+    "name": "gita",
+    "email": "gita@gmail.com",
+    "password": "gita123"
+}
+
+### EDIT USER
+PUT http://localhost:5000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJuYW1lIjoiZ2l0YSIsImVtYWlsIjoiZ2l0YUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImNyZWF0ZWRBdCI6IjIwMjUtMDUtMjJUMDU6MjA6MzYuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDUtMjJUMDU6MzI6MTkuMDAwWiIsImlhdCI6MTc0Nzg5MjA5OSwiZXhwIjoxNzQ3ODkyMTI5fQ.hwwh29UsHBn0inc-2yP0qQcKC3ghE6JpKvsIvUs56j4
+Content-Type: application/json
+
+{
+    "name": "gita",
+    "email": "gita23@gmail.com"
+}
+
+### DELETE USER
+DELETE http://localhost:5000/users/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoxLCJuYW1lIjoiZ2l0YSIsImVtYWlsIjoiZ2l0YTIzQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiY3JlYXRlZEF0IjoiMjAyNS0wNS0yMlQwNToyMDozNi4wMDBaIiwidXBkYXRlZEF0IjoiMjAyNS0wNS0yMlQwNTozNToxMi4wMDBaIiwiaWF0IjoxNzQ3ODkyMTc2LCJleHAiOjE3NDc4OTIyMDZ9.RC4t9YnRxYC8zYqDHSk_Xs2g-V9G6sQ0KpIGFc-bzQc
+
+### Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "abcde@gmail.com",
+    "password": "abcde"
+}
+
+### Logout User
+POST http://localhost:5000/logout
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoyLCJuYW1lIjoiZ2l0YSIsImVtYWlsIjoiZ2l0YUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImNyZWF0ZWRBdCI6IjIwMjUtMDUtMjJUMDU6NDY6MTkuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDUtMjJUMDU6NTQ6NDAuMDAwWiIsImlhdCI6MTc0Nzg5MzcwOSwiZXhwIjoxNzQ3ODkzNzM5fQ.TLs7R4fL8plFjIuXnv98iOtW_vtJmRnLEaDNA2YsreI
+Content-Type: application/json
+
+{
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZF91c2VyIjoyLCJuYW1lIjoiZ2l0YSIsImVtYWlsIjoiZ2l0YUBnbWFpbC5jb20iLCJyb2xlIjoidXNlciIsImNyZWF0ZWRBdCI6IjIwMjUtMDUtMjJUMDU6NDY6MTkuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjUtMDUtMjJUMDU6NTE6NDUuMDAwWiIsImlhdCI6MTc0Nzg5MzIzMSwiZXhwIjoxNzQ3OTc5NjMxfQ.8CDXzWzPsNjtu6XYSIRocRN36RuE13ahvS1cpkh_iiI"
+}
