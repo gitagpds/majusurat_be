@@ -1,7 +1,7 @@
 steps:
   # 1. Salin file .env dari Cloud Storage ke direktori kerja Cloud Build Pakai Gsuri
   - name: "gcr.io/cloud-builders/gsutil"
-    args: ["cp", "gs://majusurat-env/.env", ".env"]
+    args: ["cp", "${_ENV}", ".env"]
     dir: "majusurat_be"
 
   # 2. Build Docker image backend dengan tag yang sesuai project dan service
