@@ -16,11 +16,11 @@ dotenv.config();
 const app = express();
 
 // ======== CORS FIXED =========
-const allowedOrigins = [
-  "http://localhost:3000",
-  "http://localhost:8080",
-  "https://majusurat-fe-dot-a-06-new.uc.r.appspot.com"
-];
+// const allowedOrigins = [
+//   "http://localhost:3000",
+//   "http://localhost:8080",
+//   "https://majusurat-fe-dot-a-06-new.uc.r.appspot.com"
+// ];
 
 app.use(
   cors({
