@@ -86,7 +86,9 @@ app.use((req, res) => {
 });
 
 // Jalankan server
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT;
+if (!PORT) throw new Error("PORT env variable is required on Cloud Run");
+
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
