@@ -15,16 +15,16 @@ dotenv.config();
 
 const app = express();
 
-// === CORS Configuration ===
+// ======== CORS FIXED =========
 const allowedOrigins = [
-  "http://localhost:5000",
+  "http://localhost:3000",
+  "http://localhost:8080",
   "https://majusurat-fe-dot-a-06-new.uc.r.appspot.com"
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Izinkan permintaan tanpa origin (misalnya dari Postman) atau dari daftar
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -34,21 +34,6 @@ app.use(
     credentials: true,
   })
 );
-
-// Tangani preflight request (OPTIONS)
-app.options("*", cors());
-
-// Header tambahan agar CORS benar-benar berhasil
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
-  res.header("Access-Control-Allow-Credentials", "true");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE, OPTIONS");
-  next();
-});
 
 // Body parser
 app.use(express.json());
@@ -86,9 +71,7 @@ app.use((req, res) => {
 });
 
 // Jalankan server
-const PORT = process.env.PORT;
-if (!PORT) throw new Error("PORT env variable is required on Cloud Run");
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+const port = process.env.PORT || 8080;
+app.listen(port, () => {
+  console.log(`🚀 Server running on port ${port}`);
 });
