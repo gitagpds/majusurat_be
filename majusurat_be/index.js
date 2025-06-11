@@ -17,7 +17,7 @@ const app = express();
 
 // === CORS Configuration ===
 const allowedOrigins = [
-  "http://localhost:5001",
+  "http://localhost:5000",
   "https://majusurat-fe-dot-a-06-new.uc.r.appspot.com"
 ];
 
