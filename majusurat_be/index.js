@@ -17,7 +17,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"], // GANTI KE  origin: ["http://localhost:3000", "http://[FRONTEND]"], JIKA SUDAH ADA FRONTEND
+    origin: ["http://localhost:3000", "https://majusurat-fe-dot-a-06-new.uc.r.appspot.com"], // GANTI KE  origin: ["http://localhost:3000", "http://[FRONTEND]"], JIKA SUDAH ADA FRONTEND
     credentials: true,
   })
 );
